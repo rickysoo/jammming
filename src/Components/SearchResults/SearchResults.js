@@ -1,8 +1,13 @@
 import React from 'react';
+import './SearchResults.css';
 
 class SearchResults extends React.Component {
     render() {
-        return '';
+        return (
+            <div className="SearchResults">
+                <h2>Results</h2>
+            </div>
+        );
     }
 }
 
