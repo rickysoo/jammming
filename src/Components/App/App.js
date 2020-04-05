@@ -21,10 +21,10 @@ class App extends React.Component {
       ],
       SearchResults: [
         {
-          name: 'Good Love',
-          artist: 'Ricky',
-          album: 'AAA',
-          id: 123
+          name: 'Good Love 2',
+          artist: 'Ricky 2',
+          album: 'AAA 2',
+          id: 1232
         }
       ]
     };
@@ -34,7 +34,7 @@ class App extends React.Component {
   }
 
   addTrack(track) {
-    if(!this.playlistTracks.find(savedTrack => savedTrack.id === track.id)) {
+    if(!this.state.playlistTracks.find(savedTrack => savedTrack.id === track.id)) {
       this.setState({
         playlistTracks: this.state.playlistTracks.concat([track])
       });
