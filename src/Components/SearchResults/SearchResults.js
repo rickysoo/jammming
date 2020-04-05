@@ -6,7 +6,7 @@ class SearchResults extends React.Component {
     render() {
         return (
             <div className="SearchResults">
-                <TrackList tracks={this.props.SearchResults} />
+                <TrackList tracks={this.props.SearchResults} onAdd={this.props.onAdd} isRemoval={false} />
                 <h2>Results</h2>
             </div>
         );
