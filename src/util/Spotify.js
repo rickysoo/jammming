@@ -5,7 +5,29 @@ let accessToken = '';
 let URL = `https://accounts.spotify.com/authorize?client_id=${clientID}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectURI}`;
 
 const Spotify = {
+    async search(term) {
+        const searchURL = `https://api.spotify.com/v1/search?type=track&q=${term}`;
 
+        try {
+            const response = await fetch(searchURL, {
+                headers: {
+                    Authorization: `Bearer${accessToken}`
+                }
+            });
+
+            if(response.ok) {
+                const jsonResponse = await response.json();
+                return jsonResponse.length === 0 ? [] : jsonResponse;
+            }
+
+            throw new Error('Request Failed!');
+        } catch(error) {
+            console.log(error);
+        }        
+    }
+
+
+    
 };
 
 function getAccessToken() {

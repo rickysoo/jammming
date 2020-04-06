@@ -70,6 +70,9 @@ alert(this.state.trackURIs);
 
   search(term) {
     alert(`Search term: ${term}`);
+    this.setState({
+      SearchResults: Spotify.search(term)
+    });
   }
 
   render() {
